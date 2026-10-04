@@ -1,0 +1,6 @@
+requests>=2.31
+google-genai>=1.0        # if LLM_PROVIDER=gemini (default)
+anthropic>=0.40          # if LLM_PROVIDER=anthropic
+jsonschema>=4.20
+shapely>=2.0             # point-in-polygon for incorporated places
+pyshp>=2.3               # reads TIGER place shapefiles

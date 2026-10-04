@@ -1,0 +1,189 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite" // Use PostgreSQL for production
+  url      = env("DATABASE_URL")
+}
+
+model Property {
+  id             String         @id @default(uuid())
+  addressLine1   String
+  city           String
+  state          String
+  zip            String
+  latitude       Float?
+  longitude      Float?
+  jurisdictions  Jurisdiction[] @relation("PropertyJurisdictions")
+  questionsAsked Question[]
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+}
+
+model Jurisdiction {
+  id             String          @id @default(uuid())
+  name           String
+  level          String          // "State", "County", "City", "Local"
+  properties     Property[]      @relation("PropertyJurisdictions")
+  documents      LegalDocument[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+}
+
+model LegalTopic {
+  id          String          @id @default(uuid())
+  name        String          @unique // rent_increase, rent_control, etc.
+  description String?
+  documents   LegalDocument[] @relation("DocumentTopics")
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+}
+
+model LegalDocument {
+  id               String           @id @default(uuid())
+  title            String
+  jurisdictionId   String
+  jurisdiction     Jurisdiction     @relation(fields: [jurisdictionId], references: [id])
+  jurisdictionLevel String          
+  topics           LegalTopic[]     @relation("DocumentTopics")
+  text             String
+  snapshot_text    String?          
+  content_hash     String?
+  retrieved_at     DateTime?
+  source_url       String
+  authority_level  String           
+  effective_from   DateTime
+  effective_until  DateTime?
+  status           String           
+  provisions       LegalProvision[]
+  citations        Citation[]
+  last_updated     DateTime         @updatedAt
+  createdAt        DateTime         @default(now())
+}
+
+model LegalProvision {
+  id              String        @id @default(uuid())
+  documentId      String
+  document        LegalDocument @relation(fields: [documentId], references: [id])
+  section         String?       
+  text            String
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+}
+
+model Question {
+  id           String    @id @default(uuid())
+  propertyId   String
+  property     Property  @relation(fields: [propertyId], references: [id])
+  questionText String
+  answers      Answer[]
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model Answer {
+  id           String     @id @default(uuid())
+  questionId   String
+  question     Question   @relation(fields: [questionId], references: [id])
+  shortAnswer  String
+  explanation  String
+  confidence   String     // "High", "Medium", "Low"
+  targetDate   DateTime?  // The date context for the answer
+  citations    Citation[]
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+}
+
+model Citation {
+  id              String        @id @default(uuid())
+  answerId        String
+  answer          Answer        @relation(fields: [answerId], references: [id])
+  documentId      String
+  document        LegalDocument @relation(fields: [documentId], references: [id])
+  claim           String
+  relevant_text   String
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+}
+
+// --- MAP & RULES EXTENSIONS ---
+
+model MapProperty {
+  id               String       @id @default(uuid())
+  street           String
+  city             String
+  county           String
+  state            String
+  zip              String
+  latitude         Float
+  longitude        Float
+  neighbourhood    String?
+  year_built       Int?
+  unit_count       Int?
+  rent_controlled  Boolean?
+  tenancy_type     String?
+  is_demo          Boolean      @default(true)
+  rule_caches      RuleCache[]
+  user_actions     UserPropertyAction[]
+}
+
+model RuleCache {
+  id               String       @id @default(uuid())
+  propertyId       String
+  property         MapProperty  @relation(fields: [propertyId], references: [id])
+  topic            String       
+  target_date      DateTime
+  value            Float?
+  unit             String?      
+  status           String       
+  depends_reason   String?
+  document_ids     String       
+  evidence_anchors String       
+  confidence       String
+  updatedAt        DateTime     @updatedAt
+  
+  @@unique([propertyId, topic, target_date])
+}
+
+// --- SOCIAL LAYER ---
+
+model User {
+  id             String       @id @default(uuid())
+  email          String       @unique
+  name           String
+  avatar_url     String?
+  is_demo        Boolean      @default(true)
+  actions        UserPropertyAction[]
+  friendsA       Friendship[] @relation("UserA")
+  friendsB       Friendship[] @relation("UserB")
+}
+
+model Friendship {
+  id        String   @id @default(uuid())
+  userAId   String
+  userBId   String
+  status    String   
+  userA     User     @relation("UserA", fields: [userAId], references: [id], onDelete: Cascade)
+  userB     User     @relation("UserB", fields: [userBId], references: [id], onDelete: Cascade)
+  
+  @@unique([userAId, userBId])
+}
+
+model UserPropertyAction {
+  id             String       @id @default(uuid())
+  userId         String
+  user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  propertyId     String
+  property       MapProperty  @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  is_liked       Boolean      @default(false)
+  living_status  String?      
+  visibility     String       
+  precision      String       
+  updatedAt      DateTime     @updatedAt
+  
+  @@unique([userId, propertyId])
+}

@@ -1,0 +1,510 @@
+{
+ "T1": {
+  "name": "California AB 325 / SB 763",
+  "mode": "as_of",
+  "dates": [
+   "2025-12-31",
+   "2026-01-02"
+  ],
+  "selected_rules": [],
+  "confirmed": [],
+  "possible": [],
+  "per_address": {}
+ },
+ "T2": {
+  "name": "Hoboken vs Jersey City local algorithmic bans",
+  "mode": "boundary",
+  "dates": [
+   "2026-10-01"
+  ],
+  "selected_rules": [],
+  "confirmed": [],
+  "possible": [],
+  "per_address": {},
+  "scope_leaks": []
+ },
+ "T3": {
+  "name": "NJ FAIR Act (enacted 2026-07-20, effective 2027-07-01)",
+  "mode": "as_of",
+  "dates": [
+   "2026-10-01",
+   "2027-07-02"
+  ],
+  "selected_rules": [],
+  "confirmed": [],
+  "possible": [],
+  "per_address": {}
+ },
+ "T4": {
+  "name": "Massachusetts pending bills S.2983 / H.5222",
+  "mode": "pending",
+  "dates": [
+   "2026-10-01"
+  ],
+  "selected_rules": [
+   {
+    "rule_id": "r-0037",
+    "citation": "Bill S.2983 (194th Legislature)",
+    "status": "pending",
+    "effective_date": null
+   }
+  ],
+  "confirmed": [
+   "A0006",
+   "A0009",
+   "A0010",
+   "A0015",
+   "A0024",
+   "A0034",
+   "A0036",
+   "A0039",
+   "A0043",
+   "A0046",
+   "A0048",
+   "A0052",
+   "A0053",
+   "A0054",
+   "A0056",
+   "A0063",
+   "A0064",
+   "A0065",
+   "A0068",
+   "A0070",
+   "A0071",
+   "A0073",
+   "A0075",
+   "A0077",
+   "A0082",
+   "A0083",
+   "A0086",
+   "A0093",
+   "A0095",
+   "A0096",
+   "A0098",
+   "A0118",
+   "A0123",
+   "A0124",
+   "A0128",
+   "A0134",
+   "A0140",
+   "A0143",
+   "A0144",
+   "A0149",
+   "A0151",
+   "A0155",
+   "A0166",
+   "A0169",
+   "A0174",
+   "A0175",
+   "A0176",
+   "A0191",
+   "A0194",
+   "A0195",
+   "A0198",
+   "A0199",
+   "A0203",
+   "A0209",
+   "A0211",
+   "A0214",
+   "A0217",
+   "A0218",
+   "A0220",
+   "A0221",
+   "A0226",
+   "A0230",
+   "A0232",
+   "A0233",
+   "A0242",
+   "A0245",
+   "A0258",
+   "A0272",
+   "A0284",
+   "A0286",
+   "A0290",
+   "A0291",
+   "A0292",
+   "A0294",
+   "A0295",
+   "A0298",
+   "A0300",
+   "A0301",
+   "A0302",
+   "A0306",
+   "A0310",
+   "A0312",
+   "A0332",
+   "A0336",
+   "A0339",
+   "A0342",
+   "A0354",
+   "A0356",
+   "A0361",
+   "A0362",
+   "A0366",
+   "A0376",
+   "A0380",
+   "A0403",
+   "A0406",
+   "A0422",
+   "A0423",
+   "A0429",
+   "A0444",
+   "A0446",
+   "A0453",
+   "A0463",
+   "A0464",
+   "A0465",
+   "A0466",
+   "A0467",
+   "A0468",
+   "A0473",
+   "A0485",
+   "A0488"
+  ],
+  "possible": [],
+  "per_address": {
+   "A0006": {
+    "result": "pending"
+   },
+   "A0009": {
+    "result": "pending"
+   },
+   "A0010": {
+    "result": "pending"
+   },
+   "A0015": {
+    "result": "pending"
+   },
+   "A0024": {
+    "result": "pending"
+   },
+   "A0034": {
+    "result": "pending"
+   },
+   "A0036": {
+    "result": "pending"
+   },
+   "A0039": {
+    "result": "pending"
+   },
+   "A0043": {
+    "result": "pending"
+   },
+   "A0046": {
+    "result": "pending"
+   },
+   "A0048": {
+    "result": "pending"
+   },
+   "A0052": {
+    "result": "pending"
+   },
+   "A0053": {
+    "result": "pending"
+   },
+   "A0054": {
+    "result": "pending"
+   },
+   "A0056": {
+    "result": "pending"
+   },
+   "A0063": {
+    "result": "pending"
+   },
+   "A0064": {
+    "result": "pending"
+   },
+   "A0065": {
+    "result": "pending"
+   },
+   "A0068": {
+    "result": "pending"
+   },
+   "A0070": {
+    "result": "pending"
+   },
+   "A0071": {
+    "result": "pending"
+   },
+   "A0073": {
+    "result": "pending"
+   },
+   "A0075": {
+    "result": "pending"
+   },
+   "A0077": {
+    "result": "pending"
+   },
+   "A0082": {
+    "result": "pending"
+   },
+   "A0083": {
+    "result": "pending"
+   },
+   "A0086": {
+    "result": "pending"
+   },
+   "A0093": {
+    "result": "pending"
+   },
+   "A0095": {
+    "result": "pending"
+   },
+   "A0096": {
+    "result": "pending"
+   },
+   "A0098": {
+    "result": "pending"
+   },
+   "A0118": {
+    "result": "pending"
+   },
+   "A0123": {
+    "result": "pending"
+   },
+   "A0124": {
+    "result": "pending"
+   },
+   "A0128": {
+    "result": "pending"
+   },
+   "A0134": {
+    "result": "pending"
+   },
+   "A0140": {
+    "result": "pending"
+   },
+   "A0143": {
+    "result": "pending"
+   },
+   "A0144": {
+    "result": "pending"
+   },
+   "A0149": {
+    "result": "pending"
+   },
+   "A0151": {
+    "result": "pending"
+   },
+   "A0155": {
+    "result": "pending"
+   },
+   "A0166": {
+    "result": "pending"
+   },
+   "A0169": {
+    "result": "pending"
+   },
+   "A0174": {
+    "result": "pending"
+   },
+   "A0175": {
+    "result": "pending"
+   },
+   "A0176": {
+    "result": "pending"
+   },
+   "A0191": {
+    "result": "pending"
+   },
+   "A0194": {
+    "result": "pending"
+   },
+   "A0195": {
+    "result": "pending"
+   },
+   "A0198": {
+    "result": "pending"
+   },
+   "A0199": {
+    "result": "pending"
+   },
+   "A0203": {
+    "result": "pending"
+   },
+   "A0209": {
+    "result": "pending"
+   },
+   "A0211": {
+    "result": "pending"
+   },
+   "A0214": {
+    "result": "pending"
+   },
+   "A0217": {
+    "result": "pending"
+   },
+   "A0218": {
+    "result": "pending"
+   },
+   "A0220": {
+    "result": "pending"
+   },
+   "A0221": {
+    "result": "pending"
+   },
+   "A0226": {
+    "result": "pending"
+   },
+   "A0230": {
+    "result": "pending"
+   },
+   "A0232": {
+    "result": "pending"
+   },
+   "A0233": {
+    "result": "pending"
+   },
+   "A0242": {
+    "result": "pending"
+   },
+   "A0245": {
+    "result": "pending"
+   },
+   "A0258": {
+    "result": "pending"
+   },
+   "A0272": {
+    "result": "pending"
+   },
+   "A0284": {
+    "result": "pending"
+   },
+   "A0286": {
+    "result": "pending"
+   },
+   "A0290": {
+    "result": "pending"
+   },
+   "A0291": {
+    "result": "pending"
+   },
+   "A0292": {
+    "result": "pending"
+   },
+   "A0294": {
+    "result": "pending"
+   },
+   "A0295": {
+    "result": "pending"
+   },
+   "A0298": {
+    "result": "pending"
+   },
+   "A0300": {
+    "result": "pending"
+   },
+   "A0301": {
+    "result": "pending"
+   },
+   "A0302": {
+    "result": "pending"
+   },
+   "A0306": {
+    "result": "pending"
+   },
+   "A0310": {
+    "result": "pending"
+   },
+   "A0312": {
+    "result": "pending"
+   },
+   "A0332": {
+    "result": "pending"
+   },
+   "A0336": {
+    "result": "pending"
+   },
+   "A0339": {
+    "result": "pending"
+   },
+   "A0342": {
+    "result": "pending"
+   },
+   "A0354": {
+    "result": "pending"
+   },
+   "A0356": {
+    "result": "pending"
+   },
+   "A0361": {
+    "result": "pending"
+   },
+   "A0362": {
+    "result": "pending"
+   },
+   "A0366": {
+    "result": "pending"
+   },
+   "A0376": {
+    "result": "pending"
+   },
+   "A0380": {
+    "result": "pending"
+   },
+   "A0403": {
+    "result": "pending"
+   },
+   "A0406": {
+    "result": "pending"
+   },
+   "A0422": {
+    "result": "pending"
+   },
+   "A0423": {
+    "result": "pending"
+   },
+   "A0429": {
+    "result": "pending"
+   },
+   "A0444": {
+    "result": "pending"
+   },
+   "A0446": {
+    "result": "pending"
+   },
+   "A0453": {
+    "result": "pending"
+   },
+   "A0463": {
+    "result": "pending"
+   },
+   "A0464": {
+    "result": "pending"
+   },
+   "A0465": {
+    "result": "pending"
+   },
+   "A0466": {
+    "result": "pending"
+   },
+   "A0467": {
+    "result": "pending"
+   },
+   "A0468": {
+    "result": "pending"
+   },
+   "A0473": {
+    "result": "pending"
+   },
+   "A0485": {
+    "result": "pending"
+   },
+   "A0488": {
+    "result": "pending"
+   }
+  }
+ },
+ "T5": {
+  "name": "Massachusetts rent-control ballot question (struck)",
+  "mode": "negative",
+  "dates": [
+   "2026-10-01"
+  ],
+  "selected_rules": [],
+  "confirmed": [],
+  "possible": [],
+  "per_address": {},
+  "rent_cap_violations": []
+ }
+}
